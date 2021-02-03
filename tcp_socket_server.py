@@ -10,10 +10,10 @@ class TCPSocketServer(socketserver.BaseRequestHandler):
             try:
                 data = self.request.recv(2048)
                 print(data.decode('utf-8'))
+                time.sleep(1)
             except KeyboardInterrupt:
                 print('C/S')
                 data = 'salir'
-                sys.exit()
 
 class ThreadTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
