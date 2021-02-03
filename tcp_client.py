@@ -17,6 +17,15 @@ except socket.error as e:
 output_message = ''
 
 while output_message != 'salir':
-    tcp_client.sendall(output_message.encode('utf-8'))
+    output_message = input('Ingrese un mensaje: ')
+    try: 
+        tcp_client.sendall(output_message.encode('utf-8'))
+    except:
+        output_message == 'salir'
+
+tcp_client.close()
+  
+
+
 
 
